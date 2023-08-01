@@ -16,7 +16,7 @@ AFRAME.registerComponent("flying-birds", {
       this.flyingBirds(id, position);
     }
   },
-  flyingBirds: (id, position) => {
+  flyingBirds: function(id, position){
     //Get the terrain element
     var terrainEl = document.querySelector("#terrain");
 
