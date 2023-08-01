@@ -42,7 +42,7 @@ AFRAME.registerComponent("game-play", {
     }
   },
   isCollided: function (elemntId) {
-    const element = document.querySelector(elemntId);
+    const element = document.querySelector(elementId);
     element.addEventListener("collide", (e) => {
       if (elemntId.includes("#ring")) {
         element.setAttribute("visible", false)
