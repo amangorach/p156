@@ -17,7 +17,12 @@ AFRAME.registerComponent("target-ring", {
   },
 
   createRings: function (id, position) {
-    var terrainEl = document.querySelector("#terrain");
+     var terrainEl = document.querySelector("#terrain"); 
+    // Get the terrain's height at the given X and Z positions 
+    var terrainHeight = terrainEl.components.terrain.getHeightAtCoordinates(position.x, position.z); 
+    // Set the Y position based on the terrain height 
+    position.y = terrainHeight + 0.1; 
+    // Add an offset of 0.1 to avoid placing the ring too close to the terrain 
     var ringEl = document.createElement("a-entity");
 
     ringEl.setAttribute("id", id);
